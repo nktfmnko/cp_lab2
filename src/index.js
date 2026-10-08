@@ -1,3 +1,5 @@
+import { MiniMaple } from "./miniMaple";
+
 document.addEventListener('DOMContentLoaded',setup)
 
 function setup() {
@@ -12,3 +14,13 @@ function addSomething(){
     const container = document.getElementById('container');
     container.appendChild(someDummyDiv);
 }
+
+const diffButton = document.getElementById('demoButton')
+const inputTA = document.getElementById('input_text')
+const resText = document.getElementById('result')
+
+const maple = new MiniMaple()
+
+diffButton.addEventListener('click', function() {
+    resText.innerText = maple.differentiate(inputTA.value)
+});
